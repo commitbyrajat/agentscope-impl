@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+# Keep this false to prevent dumping the massive CONDITIONS EVALUATION REPORT
+debug: false
+
+logging:
+  level:
+    root: INFO
+    # Enable full debug logs for your application code
+    com.agent.scope.io: DEBUG
+    # Enable full debug logs for AgentScope core and models
+    io.agentscope: DEBUG
+    # Optional: Debug web requests and Spring MVC routing
+    org.springframework.web: DEBUG
+
+agentscope:
+  model:
+    provider: openai
+  openai:
+    enabled: true
+    api-key: ${OPENAI_API_KEY:sk-proj-test1234567890}
+    model-name: gpt-4o-mini
+#    # Optional parameters:
+#    # base-url: https://api.openai.com/v1
+#    # temperature: 0.7
+#    # stream: false
